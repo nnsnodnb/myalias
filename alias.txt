@@ -1,0 +1,21 @@
+alias ll='ls -la'
+alias cl='clear'
+
+### Git alias command
+
+alias pull='git pull'
+alias push='git push'
+alias st='git status'
+alias commit='git commit -m'
+alias add='echo "Branch is -> " && git branch && git add'
+alias remote='git remote'
+alias diff='git diff'
+alias clone='git clone'
+alias status='git status'
+alias checkout='git checkout'
+alias branch='git branch'
+alias merge='git merge'
+alias log='git log'
+alias config='git config'
+alias fetch='git fetch'
+alias init='git init'
