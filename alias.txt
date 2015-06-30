@@ -1,4 +1,4 @@
-alias ll='ls -la'
+as ll='ls -la'
 alias cl='clear'
 
 ### Git alias command
@@ -19,3 +19,5 @@ alias log='git log'
 alias config='git config'
 alias fetch='git fetch'
 alias init='git init'
+alias show='git show'
+alias reset='git reset'
