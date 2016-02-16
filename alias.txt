@@ -1,5 +1,11 @@
 alias ll='ls -la'
+alias l='ls -al'
 alias cl='clear'
+alias md='mkdir'
+
+### VirtualEnv
+alias act='. bin/activate'
+alias deact='deactivate'
 
 ### Git alias command
 
@@ -7,7 +13,6 @@ alias pull='git pull'
 alias push='git push'
 alias st='git status'
 alias commit='git commit -m'
-alias amend='git commit --amend'
 alias add='echo "Branch -> `git rev-parse --abbrev-ref HEAD`" && git add'
 alias remote='git remote'
 alias diff='git diff'
@@ -21,6 +26,8 @@ alias config='git config'
 alias fetch='git fetch'
 alias init='git init'
 alias show='git show'
-alias reset='git reset'
+alias amend='git commit --amend'
+alias submodule='git submodule add'
 alias tag='git tag'
+alias reset='git reset'
 alias rebase='git rebase'
