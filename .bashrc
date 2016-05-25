@@ -1,3 +1,9 @@
+### PyEnv
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 ### Prompt text
 
 PS1="\h:\[\033[1;31m\]\W\[\033[0m\] \u $ "
@@ -12,7 +18,7 @@ alias md='mkdir'
 ### Git command
 
 alias pull='git pull'
-alias push='git push'
+alias push='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias st='git status'
 alias commit='git commit -m'
 alias amend='git commit --amend'
@@ -34,15 +40,7 @@ alias rebase='git rebase'
 alias revert='git revert'
 alias stash='git stash'
 alias gelse='git blame-someone-else'
-
-### Node.js
-
-export NVM_DIR="/Users/oka/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-nvm use 5.8.0
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
+alias gnow='git rev-parse --abbrev-ref HEAD | tr -d "\n" | pbcopy'
 
 ### VirtualEnv
 
