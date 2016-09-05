@@ -1,0 +1,5 @@
+ssh-add ~/.ssh/id_rsa_bitbucket > /dev/null 2>&1;
+ssh-add ~/.ssh/id_rsa_github > /dev/null 2>&1;
+ssh-add ~/.ssh/id_rsa_github_smartdt > /dev/null 2>&1;
+ssh-add ~/.ssh/id_rsa_raspi > /dev/null 2>&1;
+ssh-add ~/.ssh/id_rsa_smartdt > /dev/null 2>&1;
