@@ -52,10 +52,6 @@ alias gelse='git blame-someone-else'
 function gnow() { git rev-parse --abbrev-ref HEAD | tr -d "\n" | pbcopy; }
 #alias bnow='git rev-parse --abbrev-ref HEAD'
 function bnow() { git rev-parse --abbrev-ref HEAD; }
-function git_sdt() {
-	git config --local user.name y.oka;
-	git config --local user.email y.oka@smartdt.jp;
-}
 function git_nnsnodnb() {
 	git config --local user.name nnsnodnb;
 	git config --local user.email ahr63_gej@me.com;
@@ -72,7 +68,7 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 ### Xcode project's .gitignore
 
-function gixcode() { curl -L -s https://gist.githubusercontent.com/nnsnodnb/37b29107bd525fc4f83adbca2ab75a8b/raw/.gitignore; }
+function gixcode() { curl -L -s https://raw.githubusercontent.com/nnsnodnb/gitignore/master/xcode_osx; }
 
 ### CocoaPods
 
