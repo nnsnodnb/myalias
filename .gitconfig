@@ -1,12 +1,10 @@
 [core]
-	excludesfile = /Users/oka/.gitignore_global
+	excludesfile = /Users/nnsnodnb/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
 [user]
 	name = nnsnodnb
 	email = ahr63_gej@me.com
 [color]
 	ui = true
-[merge "mergepbx"]
-	name = Xcode project files merger
-	driver = mergepbx %O %A %B
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
