@@ -16,11 +16,8 @@ alias cl='clear'
 alias md='mkdir -p'
 alias chownme='chown nnsnodnb:staff'
 alias json='jq'
-alias reload='source ~/.bashrc'
-
-### SSH
-
-alias nnsnodnb@nnsnodnb.moe='-l nnsnodnb -i ~/.ssh/id_rsa_raspi nnsnodnb.moe'
+alias reload='source ~/.bash_profile'
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 
 ### Git command
 
@@ -39,28 +36,25 @@ alias branch='git branch'
 alias merge='git merge'
 alias log='git log'
 alias config='git config'
-alias fetch='git fetch --all'
+alias fetch='git fetch --all -p'
 alias ginit='git init'
 alias show='git show'
 alias reset='git reset'
+alias hard='git reset --hard'
 alias tag='git tag'
 alias rebase='git rebase'
 alias revert='git revert'
 alias stash='git stash'
 alias gelse='git blame-someone-else'
-#alias gnow='bnow | tr -d "\n" | pbcopy'
+alias cherry-pick='git cherry-pick'
 function gnow() { git rev-parse --abbrev-ref HEAD | tr -d "\n" | pbcopy; }
-#alias bnow='git rev-parse --abbrev-ref HEAD'
 function bnow() { git rev-parse --abbrev-ref HEAD; }
-function git_nnsnodnb() {
-	git config --local user.name nnsnodnb;
-	git config --local user.email ahr63_gej@me.com;
-}
 
 ### VirtualEnv
 
 alias act='. bin/activate'
 alias deact='deactivate'
+alias venv='. venv/bin/activate'
 
 ### gitignore.io API Command Line Tool
 
@@ -76,30 +70,30 @@ alias pini='bundle exec pod init'
 alias pins='bundle exec pod install'
 alias pud='bundle exec pod update'
 
+### rbenv
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+### GoEnv
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
 ### Bundler
 
 alias binit='bundle init'
 alias bins='bundle install'
 
-### Swiftenv 
-export PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH"
-export SWIFTENV_ROOT="$HOME/.swiftenv"
-export PATH="$SWIFTENV_ROOT/bin:$PATH"
+### RSA
 
-### rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+ssh-add ~/.ssh/id_rsa_github > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa_zeus > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa_macbook > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa_azure > /dev/null 2>&1
+ssh-add ~/.ssh/id_rsa_bitbucket > /dev/null 2>&1
+ssh-add ~/.ssh/aws_ubuntu.pem > /dev/null 2>&1
 
-### NodeJS
-export NVM_DIR="/Users/nnsnodnb/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-### Custom Synx
-function cus_synx() {
-    if [ `echo $1 | grep '/'` ] ; then
-        project_name=( `echo $1 | tr -d '/'` );
-        synx $1${project_name}.xcodeproj/;
-    else
-        synx $1/$1.xcodeproj/
-    fi
-}
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
